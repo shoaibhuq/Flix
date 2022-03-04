@@ -1,15 +1,14 @@
 //
-//  MovieDetailedViewController.swift
+//  GridDetailedViewContorllerViewController.swift
 //  Flix
 //
-//  Created by Shoaib Huq on 3/1/22.
+//  Created by Shoaib Huq on 3/4/22.
 //
 
 import UIKit
-import AlamofireImage
 
-class MovieDetailedViewController: UIViewController {
-
+class GridDetailedViewContorllerViewController: UIViewController {
+    
     @IBOutlet weak var movieBackgroundPoster: UIImageView!
     @IBOutlet weak var movieDescription: UILabel!
     @IBOutlet weak var mainMoviePoster: UIImageView!
@@ -34,9 +33,6 @@ class MovieDetailedViewController: UIViewController {
         movieReleaseDate.sizeToFit()
         mainMoviePoster.af.setImage(withURL: URL(string: mainImageUrl)!)
         movieBackgroundPoster.af.setImage(withURL: URL(string: backgroundImageUrl)!)
-
-        
         
     }
-
 }

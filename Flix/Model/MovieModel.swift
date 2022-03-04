@@ -11,4 +11,7 @@ struct MovieModel{
     let title: String
     let description: String
     let imageURL: String
+    let backdropURL: String
+    let releaseDate: String
+    
 }
