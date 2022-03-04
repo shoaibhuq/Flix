@@ -11,11 +11,11 @@ import Foundation
 struct MovieManager{
     static let shared = MovieManager()
     
-    func requestData(completion: @escaping(([MovieModel]) -> Void)){
+    func requestData(with movieURL: String, completion: @escaping(([MovieModel]) -> Void)){
         
         var movies = [MovieModel]()
         
-        let movieURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
+        print(movieURL)
         if let url = URL(string: movieURL) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
@@ -44,8 +44,11 @@ struct MovieManager{
                 let movieTitle = obj.title
                 let movieDesc = obj.overview
                 let imageUrl = obj.poster_path
+                let backDropUrl = obj.backdrop_path
+                let releaseDate = obj.release_date
                 
-                let movie = MovieModel(title: movieTitle, description: movieDesc, imageURL: imageUrl)
+                
+                let movie = MovieModel(title: movieTitle, description: movieDesc, imageURL: imageUrl, backdropURL: backDropUrl, releaseDate: releaseDate)
                 
                 movies.append(movie)
                 
